@@ -8,6 +8,6 @@
   }
 
   .button {
-    @apply p-2 text-xs border border-yellow-400 rounded-sm md:text-sm bg-gradient-to-b from-yellow-300 to-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500;
+    @apply p-2 text-xs font-bold border border-yellow-400 rounded-sm md:text-sm bg-gradient-to-b from-yellow-300 to-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 active:from-yellow-500;
   }
 }
