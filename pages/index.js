@@ -2,8 +2,13 @@ import Head from "next/head";
 import Banner from "../components/Banner";
 import Header from "../Components/Header";
 import ProductFeed from "../components/ProductFeed";
+import { productState } from "../state/state";
+import { useRecoilState } from "recoil";
 
-export default function Home({ products }) {
+export default function Home({ data }) {
+  const [products, setProducts] = useRecoilState(productState);
+  setProducts(data);
+  console.log("products", products);
   return (
     <div className="bg-gray-100">
       <Head>
@@ -14,7 +19,7 @@ export default function Home({ products }) {
 
       <main className="mx-auto max-w-screen-2xl">
         <Banner />
-        <ProductFeed products={products} />
+        <ProductFeed />
       </main>
     </div>
   );
@@ -25,7 +30,7 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      products,
+      data: products,
     },
   };
 };
